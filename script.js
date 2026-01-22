@@ -141,7 +141,7 @@ const companies = [
         discount: "25%", 
         category: "مطاعم راقية",
         categoryEn: "Fine Dining",
-        url: "https://www.facebook.com/stackdburger/?locale=ar_AR", 
+        url: "https://sedraegy.com/", 
         validUntil: "31 ديسمبر 2026",
         validUntilEn: "December 31, 2026",
         description: "خصم على جميع المأكولات والمشروبات",
