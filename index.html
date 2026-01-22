@@ -1,101 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl" class="h-full">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة مزايا الموظفين</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <script src="/_sdk/element_sdk.js"></script>
-    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-    
-    <style>@view-transition { navigation: auto; }</style>
-</head>
-<body class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خصومات VIP الحصرية</title>
+  
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&amp;family=Cormorant+Garamond:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body class="h-full">
+  <button class="theme-toggle" onclick="toggleLanguage()" aria-label="Toggle language"> 
+   <span class="theme-icon" id="language-icon">
+    <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor" stroke="none">
+      ع
+     </text>
+    </svg></span> 
+  </button>
 
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" style="left: 30px;">
-        <span class="theme-icon" id="theme-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        </span>
-    </button>
+  <div class="animated-bg">
+   <div class="floating-shape shape-1"></div>
+   <div class="floating-shape shape-2"></div>
+   <div class="floating-shape shape-3"></div>
+  </div>
 
-    <button class="theme-toggle" onclick="toggleLanguage()" aria-label="Toggle language" style="left: 110px;">
-        <span class="theme-icon" id="language-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor" stroke="none">ع</text></svg>
-        </span>
-    </button>
-
-    <div class="color-theme-selector">
-        <button class="theme-toggle" onclick="toggleColorThemes()" aria-label="Color theme" style="left: 190px;">
-            <span class="theme-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" /> <circle cx="12" cy="12" r="2" /> <path d="M12 2v2" /> <path d="M4.93 4.93l1.41 1.41" /> <path d="M2 12h2" /> <path d="M19.07 4.93l-1.41 1.41" /> <path d="M22 12h-2" /></svg>
-            </span>
-        </button>
-        <div class="color-themes-dropdown" id="color-themes-dropdown">
-            <div class="color-theme-option" onclick="setColorTheme('default')" data-theme="default"><div class="theme-preview" style="background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);"></div><span class="theme-name">أزرق بنفسجي</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('sunset')" data-theme="sunset"><div class="theme-preview" style="background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);"></div><span class="theme-name">غروب</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('forest')" data-theme="forest"><div class="theme-preview" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);"></div><span class="theme-name">غابة</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('ocean')" data-theme="ocean"><div class="theme-preview" style="background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);"></div><span class="theme-name">محيط</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('crimson')" data-theme="crimson"><div class="theme-preview" style="background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);"></div><span class="theme-name">قرمزي</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('lavender')" data-theme="lavender"><div class="theme-preview" style="background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);"></div><span class="theme-name">لافندر</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('mint')" data-theme="mint"><div class="theme-preview" style="background: linear-gradient(135deg, #34d399 0%, #6ee7b7 100%);"></div><span class="theme-name">نعناع</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('amber')" data-theme="amber"><div class="theme-preview" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);"></div><span class="theme-name">كهرمان</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('pink')" data-theme="pink"><div class="theme-preview" style="background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);"></div><span class="theme-name">وردي</span></div>
-            <div class="color-theme-option" onclick="setColorTheme('teal')" data-theme="teal"><div class="theme-preview" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);"></div><span class="theme-name">تركواز</span></div>
+  <div class="relative z-10 w-full h-full overflow-auto">
+   <section class="text-center py-24 px-6">
+    <div class="mb-6"><span class="vip-badge" id="vip-badge"> <span class="vip-crown">👑</span> <span id="vip-badge-text">عضوية VIP الحصرية</span> </span>
+    </div>
+    <h1 id="hero-title" class="hero-title mb-6"> خصومات استثنائية VIP</h1>
+    <p id="hero-subtitle" class="text-2xl text-secondary-styled max-w-3xl mx-auto">اكتشف عروضاً فاخرة وخصومات حصرية من أرقى العلامات التجارية العالمية</p>
+   </section>
+   
+  <section class="max-w-6xl mx-auto px-6 mb-16">
+    <div class="search-container">
+        <div class="relative">
+            <input type="text" id="search-input" 
+                   class="search-input w-full py-5 rounded-3xl text-lg font-medium ps-[60px] pe-[28px]" 
+                   placeholder="ابحث عن علامة تجارية فاخرة...">
+            
+            <svg id="search-icon" 
+                 class="absolute top-1/2 transform -translate-y-1/2 w-7 h-7 text-secondary-styled start-[28px]" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
         </div>
+        <div id="suggestions" class="suggestions-dropdown absolute w-full mt-3 hidden scrollbar-custom" style="z-index: 1000;"></div>
     </div>
-
-    <div class="animated-bg">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
+</section>
+   
+   <section class="max-w-6xl mx-auto px-6 mb-16">
+    <div class="flex flex-wrap gap-4 justify-center" id="categories-container"></div>
+   </section>
+   
+   <section class="max-w-6xl mx-auto px-6 pb-24">
+    <div id="cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    <div id="no-results" class="hidden no-results text-center py-24">
+     <div class="text-7xl mb-6">
+      💎
+     </div>
+     <h3 id="no-results-title" class="text-3xl font-bold text-styled mb-3">لا توجد نتائج</h3>
+     <p id="no-results-text" class="text-secondary-styled text-lg">جرب البحث بكلمات أخرى أو اختر تصنيف مختلف</p>
     </div>
+   </section>
+   
+   <footer class="text-center py-10 px-6 border-t border-styled">
+    <p id="footer-text" class="text-secondary-styled font-medium">© 2026 برنامج VIP الحصري. جميع الحقوق محفوظة.</p>
+   </footer>
+  </div>
+  
+  <div id="modal-container"></div>
+  
+  <div id="copy-notification"></div>
 
-    <div class="relative z-10 w-full h-full overflow-auto">
-        <section class="text-center py-20 px-6">
-            <h1 id="hero-title" class="hero-title mb-4">خصومات حصرية لموظفينا</h1>
-            <p id="hero-subtitle" class="text-xl text-secondary-styled max-w-3xl mx-auto">استمتع بعروض وخصومات حصرية من أفضل الشركات والعلامات التجارية</p>
-        </section>
-
-        <section class="max-w-6xl mx-auto px-6 mb-12">
-            <div class="search-container">
-                <div class="relative">
-                    <input type="text" id="search-input" class="search-input w-full rounded-2xl text-lg" placeholder="ابحث عن شركة أو تصنيف...">
-                    <svg class="search-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </div>
-                <div id="suggestions" class="suggestions-dropdown absolute w-full mt-2 hidden scrollbar-custom" style="z-index: 1000;"></div>
-            </div>
-        </section>
-
-        <section class="max-w-6xl mx-auto px-6 mb-12">
-            <div class="flex flex-wrap gap-3 justify-center" id="categories-container"></div>
-        </section>
-
-        <section class="max-w-6xl mx-auto px-6 pb-20">
-            <div id="cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-            <div id="no-results" class="hidden no-results text-center py-20">
-                <div class="text-6xl mb-4">🔍</div>
-                <h3 id="no-results-title" class="text-2xl font-bold text-styled mb-2">لا توجد نتائج</h3>
-                <p id="no-results-text" class="text-secondary-styled">جرب البحث بكلمات أخرى أو اختر تصنيف مختلف</p>
-            </div>
-        </section>
-
-        <footer class="text-center py-8 px-6 border-t border-styled">
-            <p id="footer-text" class="text-secondary-styled">© 2026 بوابة مزايا الموظفين. جميع الحقوق محفوظة.</p>
-        </footer>
-    </div>
-
-    <div id="modal-container"></div>
-    
-    <div id="copy-notification"></div>
-
-    <script src="script.js"></script>
-</body>
+  <script src="script.js"></script>
+ </body>
 </html>
