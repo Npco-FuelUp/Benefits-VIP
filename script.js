@@ -1,324 +1,465 @@
-
-/* ========================
-   1. البيانات والترجمات
-   ======================== */
 const translations = {
     ar: {
-        hero_title: "خصومات حصرية لموظفينا",
-        hero_subtitle: "استمتع بعروض وخصومات حصرية من أفضل الشركات والعلامات التجارية",
-        search_placeholder: "ابحث عن شركة أو تصنيف...",
-        footer_text: "© 2026 بوابة مزايا الموظفين. جميع الحقوق محفوظة.",
+        hero_title: "خصومات استثنائية VIP",
+        hero_subtitle: "اكتشف عروضاً فاخرة وخصومات حصرية من أرقى العلامات التجارية العالمية",
+        vip_badge_text: "عضوية VIP الحصرية",
+        search_placeholder: "ابحث عن علامة تجارية فاخرة...",
+        footer_text: "© 2026 برنامج VIP الحصري. جميع الحقوق محفوظة.",
         all_categories: "الكل",
         category_tech: "تكنولوجيا",
-        category_pharma: "أدوية",
-        category_food: "أغذية",
-        category_clothing: "ملابس",
-        category_restaurants: "مطاعم",
-        category_services: "خدمات",
+        category_luxury: "رفاهية",
+        category_fashion: "أزياء",
+        category_automotive: "سيارات",
+        category_travel: "سفر",
+        category_dining: "مطاعم راقية",
         no_results_title: "لا توجد نتائج",
         no_results_text: "جرب البحث بكلمات أخرى أو اختر تصنيف مختلف",
         valid_until: "صالح حتى",
         offer_details: "تفاصيل العرض",
         how_to_use: "كيفية الاستفادة",
-        how_to_use_text: "امسح QR Code عند الكاشير أو أدخل كود الخصم عند الشراء أونلاين",
+        how_to_use_text: "امسح QR Code عند نقطة البيع أو أدخل كود الخصم الحصري عند الشراء",
         close: "إغلاق",
-        visit_website: "زيارة الموقع 🚀",
-        discount_label: "نسبة الخصم",
-        scan_barcode: "امسح الباركود للحصول على الخصم",
-        or_use_code: "أو استخدم الكود",
+        visit_website: "زيارة الموقع الرسمي 🌟",
+        discount_label: "الخصم الحصري",
+        scan_barcode: "امسح الباركود للحصول على الخصم الفوري",
+        or_use_code: "أو استخدم الكود الحصري",
         click_to_copy: "اضغط للنسخ",
-        copied_success: "✅ تم نسخ الكود بنجاح!",
-        theme_default: "أزرق بنفسجي",
-        theme_sunset: "غروب",
-        theme_forest: "غابة",
-        theme_ocean: "محيط",
-        theme_crimson: "قرمزي",
-        theme_lavender: "لافندر",
-        theme_mint: "نعناع",
-        theme_amber: "كهرمان",
-        theme_pink: "وردي",
-        theme_teal: "تركواز"
+        copied_success: "✨ تم نسخ الكود بنجاح!"
     },
     en: {
-        hero_title: "Exclusive Employee Discounts",
-        hero_subtitle: "Enjoy exclusive offers and discounts from the best companies and brands",
-        search_placeholder: "Search for a company or category...",
-        footer_text: "© 2026 Employee Benefits Portal. All rights reserved.",
+        hero_title: "Exceptional Discounts for the Elite",
+        hero_subtitle: "Discover luxury offers and exclusive discounts from the world's finest brands",
+        vip_badge_text: "Exclusive VIP Membership",
+        search_placeholder: "Search for luxury brands...",
+        footer_text: "© 2026 Exclusive VIP Program. All rights reserved.",
         all_categories: "All",
         category_tech: "Technology",
-        category_pharma: "Pharmacy",
-        category_food: "Food",
-        category_clothing: "Clothing",
-        category_restaurants: "Restaurants",
-        category_services: "Services",
+        category_luxury: "Luxury",
+        category_fashion: "Fashion",
+        category_automotive: "Automotive",
+        category_travel: "Travel",
+        category_dining: "Fine Dining",
         no_results_title: "No Results Found",
         no_results_text: "Try searching with different keywords or select a different category",
         valid_until: "Valid Until",
         offer_details: "Offer Details",
         how_to_use: "How to Use",
-        how_to_use_text: "Scan the QR Code at checkout or enter the discount code when shopping online",
+        how_to_use_text: "Scan the QR Code at the point of sale or enter the exclusive code when purchasing",
         close: "Close",
-        visit_website: "Visit Website 🚀",
-        discount_label: "Discount",
-        scan_barcode: "Scan the barcode to get the discount",
-        or_use_code: "Or use the code",
+        visit_website: "Visit Official Website 🌟",
+        discount_label: "Exclusive Discount",
+        scan_barcode: "Scan the barcode for instant discount",
+        or_use_code: "Or use the exclusive code",
         click_to_copy: "Click to copy",
-        copied_success: "✅ Code copied successfully!",
-        theme_default: "Blue Purple",
-        theme_sunset: "Sunset",
-        theme_forest: "Forest",
-        theme_ocean: "Ocean",
-        theme_crimson: "Crimson",
-        theme_lavender: "Lavender",
-        theme_mint: "Mint",
-        theme_amber: "Amber",
-        theme_pink: "Pink",
-        theme_teal: "Teal"
+        copied_success: "✨ Code copied successfully!"
     }
-};
-
-const icons = {
-    moon: `<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`,
-    sun: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
-    langEn: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor" stroke="none">EN</text></svg>`,
-    langAr: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor" stroke="none">ع</text></svg>`
 };
 
 const defaultConfig = {
-    hero_title: "خصومات حصرية لموظفينا",
-    hero_subtitle: "استمتع بعروض وخصومات حصرية من أفضل الشركات والعلامات التجارية",
-    search_placeholder: "ابحث عن شركة أو تصنيف...",
-    footer_text: "© 2026 بوابة مزايا الموظفين. جميع الحقوق محفوظة."
+    hero_title: "خصومات استثنائية VIP",
+    hero_subtitle: "اكتشف عروضاً فاخرة وخصومات حصرية من أرقى العلامات التجارية العالمية",
+    vip_badge_text: "عضوية VIP الحصرية",
+    search_placeholder: "ابحث عن علامة تجارية فاخرة...",
+    footer_text: "© 2026 برنامج VIP الحصري. جميع الحقوق محفوظة."
 };
 
 const companies = [
-    { name: "أنس الدمشقي", nameEn: "Anas Aldimashky", logo: "images/anas.svg", discount: "15%", category: "مطاعم", categoryEn: "Restaurants", url: "https://anasaldimashky.tryorder.net/menu", validUntil: "31 ديسمبر 2026", validUntilEn: "December 31, 2026", description: "خصم حصري على جميع المأكولات والشاورما", descriptionEn: "Exclusive discount on all food and shawarma", discountCode: "ANAS15" },
-    { name: "المحلة للغزل والنسيج", nameEn: "Misr Mehalla", logo: "images/Misr Mehalla.svg", discount: "30%", category: "ملابس", categoryEn: "Clothing", url: "https://apple.com", validUntil: "30 يونيو 2026", validUntilEn: "December 31, 2026", description: "خصم على المفروشات والمنسوجات", descriptionEn: "Exclusive discount on all textiles or furnishings", discountCode: "MEHALLA30" },
-    { name: "بابا جونز", nameEn: "PAPA JONS", logo: "images/papa jons.svg", discount: "25%", category: "مطاعم", categoryEn: "Restaurants", url: "", validUntil: "30 يونيو 2026", validUntilEn: "December 31, 2026", description: "خصم على جميع المأكولات", descriptionEn: "Exclusive discount on all textiles or furnishings", discountCode: "MEHALLA30" },
-    { name: "ستاكد برجر", nameEn: "STACK'D", logo: "images/STACK'D.svg", discount: "25%", category: "مطاعم", categoryEn: "Restaurants", url: "", validUntil: "30 يونيو 2026", validUntilEn: "December 31, 2026", description: "خصم على جميع المأكولات", descriptionEn: "Exclusive discount on all textiles or furnishings", discountCode: "MEHALLA30" },
-    { name: "وافليشوس", nameEn: "Wafflicious", logo: "images/wafflicious.svg", discount: "15%", category: "مطاعم", categoryEn: "Restaurants", url: "https://apple.com", validUntil: "30 يونيو 2026", validUntilEn: "December 31, 2026", description: "خصم على المفروشات والمنسوجات", descriptionEn: "Exclusive discount on all textiles or furnishings", discountCode: "MEHALLA30" },
-
+    { 
+        name: "بابا  جونز", 
+        nameEn: "papa jons",
+        logo: "./images/papa jons.svg", 
+        discount: "20%", 
+        category: "مطاعم راقية",
+        categoryEn: "Fine Dining",
+        url: "https://www.papajohnsegypt.com/?lang=ar", 
+        validUntil: "31 ديسمبر 2025",
+        validUntilEn: "December 31, 2026",
+        description: "خصم على جميع انواع البيتزا والمشروبات والحلويات",
+        descriptionEn: "Exclusive discount on All kinds of pizza, drinks, and desserts - Full VIP service",
+        discountCode: "PAPAJONS-VIP20" 
+    },
+    { 
+        name: "وافليشوس", 
+        nameEn: "wafflicious",
+        logo: "./images/wafflicious.svg", 
+        discount: "20%", 
+        category: "مطاعم راقية",
+        categoryEn: "Fine Dining",
+        url: "https://wafflicious.com/", 
+        validUntil: "30 يونيو 2025",
+        validUntilEn: "December 31, 2026",
+        description: "خصم على جميع المأكولات حلو وحادق",
+        descriptionEn: "Discount on All foods are sweet and savory.",
+        discountCode: "wafflicious-VIP15" 
+    },
+    { 
+        name: "المحلة للغزل والنسيج", 
+        nameEn: "Misr Mehalla",
+        logo: "./images/Misr Mehalla.svg", 
+        discount: "30%", 
+        category: "ملابس",
+        categoryEn: "clothes",
+        url: "", 
+        validUntil: "30 يونيو 2025",
+        validUntilEn: "December 31, 2026",
+        description: "خصم على المفروشات والمنسوجات",
+        descriptionEn: "Exclusive discount on all textiles or furnishings.",
+        discountCode: "MEHALLA30" 
+    },
+    
 ];
 
-/* ========================
-   2. إدارة الحالة
-   ======================== */
 let currentLanguage = 'ar';
 let activeCategory = "الكل";
 let searchQuery = "";
-let currentColorTheme = 'default';
 
 const categoryTranslations = {
-    ar: ["الكل","ملابس", "مطاعم"],
-    en: ["All","Clothing", "Restaurants"]
+    ar: ["الكل",  "مطاعم راقية","ملابس"],
+    en: ["All", "Fine Dining",'clothes']
 };
 
-/* ========================
-   3. الدوال المساعدة
-   ======================== */
+// Barcode generation
 function generateBarcode(text, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
-    container.innerHTML = '';
-    const canvas = document.createElement('canvas');
-    canvas.width = 280; canvas.height = 120;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = 'white'; ctx.fillRect(0, 0, canvas.width, canvas.height);
-    const patterns = [[2,1,2,3,1],[3,1,1,2,2],[1,2,2,2,2],[4,1,1,1,2],[1,3,3,1,1],[3,3,1,1,1],[1,1,4,2,1],[2,2,2,2,1],[2,1,1,3,2],[1,2,3,2,1],[3,1,2,1,2],[1,3,2,1,2]];
-    const barWidth = 2; let x = 10; ctx.fillStyle = 'black';
-    [1,1,1].forEach((w,i) => { if(i%2===0) ctx.fillRect(x,10,barWidth*w,70); x+=barWidth*w; });
-    x+=2;
-    for(let i=0; i<text.length; i++) {
-        const pat = patterns[text.charCodeAt(i)%patterns.length];
-        let isBlack = true;
-        pat.forEach(w => { if(isBlack) ctx.fillRect(x,10,barWidth*w,70); x+=barWidth*w; isBlack=!isBlack; });
-    }
-    x+=2;
-    [1,1,1].forEach((w,i) => { if(i%2===0) ctx.fillRect(x,10,barWidth*w,70); x+=barWidth*w; });
     
-    let bn = ''; for(let i=0;i<text.length;i++) bn+=text.charCodeAt(i)%10;
-    bn=(bn+'000000000000').substring(0,12);
-    ctx.font='bold 10px monospace'; ctx.textAlign='center';
-    const sp=(canvas.width-20)/12;
-    for(let i=0;i<12;i++) ctx.fillText(bn[i],10+(i*sp),95);
-    ctx.font='bold 9px Arial'; ctx.fillStyle='#333'; ctx.fillText(text,canvas.width/2,110);
+    container.innerHTML = '';
+    
+    const canvas = document.createElement('canvas');
+    canvas.width = 320;
+    canvas.height = 140;
+    const ctx = canvas.getContext('2d');
+    
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    const patterns = [
+        [2,1,2,3,1], [3,1,1,2,2], [1,2,2,2,2], [4,1,1,1,2],
+        [1,3,3,1,1], [3,3,1,1,1], [1,1,4,2,1], [2,2,2,2,1],
+        [2,1,1,3,2], [1,2,3,2,1], [3,1,2,1,2], [1,3,2,1,2]
+    ];
+    
+    const barWidth = 2.2;
+    let x = 12;
+    
+    ctx.fillStyle = 'black';
+    
+    [1,1,1].forEach((w, i) => {
+        if (i % 2 === 0) {
+            ctx.fillRect(x, 12, barWidth * w, 80);
+        }
+        x += barWidth * w;
+    });
+    
+    x += 3;
+    
+    for (let i = 0; i < text.length; i++) {
+        const charCode = text.charCodeAt(i);
+        const pattern = patterns[charCode % patterns.length];
+        
+        let isBlack = true;
+        pattern.forEach(w => {
+            if (isBlack) {
+                ctx.fillRect(x, 12, barWidth * w, 80);
+            }
+            x += barWidth * w;
+            isBlack = !isBlack;
+        });
+    }
+    
+    x += 3;
+    
+    [1,1,1].forEach((w, i) => {
+        if (i % 2 === 0) {
+            ctx.fillRect(x, 12, barWidth * w, 80);
+        }
+        x += barWidth * w;
+    });
+    
+    let barcodeNumber = '';
+    for (let i = 0; i < text.length; i++) {
+        barcodeNumber += text.charCodeAt(i) % 10;
+    }
+    barcodeNumber = (barcodeNumber + '000000000000').substring(0, 12);
+    
+    ctx.fillStyle = 'black';
+    ctx.font = 'bold 11px monospace';
+    ctx.textAlign = 'center';
+    const numberSpacing = (canvas.width - 24) / 12;
+    for (let i = 0; i < 12; i++) {
+        ctx.fillText(barcodeNumber[i], 12 + (i * numberSpacing), 105);
+    }
+    
+    ctx.font = 'bold 10px Arial';
+    ctx.fillStyle = '#333';
+    ctx.fillText(text, canvas.width / 2, 125);
+    
     const img = document.createElement('img');
-    img.src = canvas.toDataURL('image/png'); img.style.maxWidth='100%';
+    img.src = canvas.toDataURL('image/png');
+    img.alt = 'Barcode';
+    img.style.maxWidth = '100%';
+    img.style.height = 'auto';
+    
     container.appendChild(img);
 }
 
 function copyToClipboard(text) {
     const textarea = document.createElement('textarea');
-    textarea.value = text; textarea.style.position = 'fixed'; textarea.style.opacity = '0';
-    document.body.appendChild(textarea); textarea.select();
-    try { document.execCommand('copy'); showCopyNotification(); } catch (err) { console.error(err); }
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    
+    try {
+        document.execCommand('copy');
+        showCopyNotification();
+    } catch (err) {
+        console.error('Failed to copy:', err);
+    }
+    
     document.body.removeChild(textarea);
 }
 
 function showCopyNotification() {
-    const n = document.getElementById('copy-notification');
-    n.innerHTML = `<div class="copy-notification">${translations[currentLanguage].copied_success}</div>`;
-    setTimeout(() => { n.innerHTML = ''; }, 2000);
-}
-
-/* ========================
-   4. إدارة الثيم واللغة
-   ======================== */
-function updateIcons() {
-    const isLight = document.body.classList.contains('light-mode');
-    document.getElementById('theme-icon').innerHTML = isLight ? icons.moon : icons.sun;
-    document.getElementById('language-icon').innerHTML = currentLanguage === 'en' ? icons.langEn : icons.langAr;
-}
-
-function toggleTheme() {
-    document.body.classList.toggle('light-mode');
-    localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-    updateIcons();
+    const notification = document.getElementById('copy-notification');
+    const t = translations[currentLanguage];
+    notification.innerHTML = `<div class="copy-notification">${t.copied_success}</div>`;
+    
+    setTimeout(() => {
+        notification.innerHTML = '';
+    }, 2500);
 }
 
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'ar' ? 'en' : 'ar';
-    const html = document.documentElement, body = document.body;
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('language-icon');
+    
+    // تحديث الاتجاه واللغة فقط
     if (currentLanguage === 'en') {
-        html.setAttribute('lang', 'en'); html.setAttribute('dir', 'ltr');
-        body.setAttribute('lang', 'en'); body.setAttribute('dir', 'ltr');
-        document.title = 'Employee Benefits Portal';
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+        body.setAttribute('lang', 'en');
+        body.setAttribute('dir', 'ltr');
+        document.title = 'VIP Exclusive Discounts';
+        
+        icon.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor" stroke="none">EN</text>
+            </svg>
+        `;
     } else {
-        html.setAttribute('lang', 'ar'); html.setAttribute('dir', 'rtl');
-        body.setAttribute('lang', 'ar'); body.setAttribute('dir', 'rtl');
-        document.title = 'بوابة مزايا الموظفين';
+        html.setAttribute('lang', 'ar');
+        html.setAttribute('dir', 'rtl');
+        body.setAttribute('lang', 'ar');
+        body.setAttribute('dir', 'rtl');
+        document.title = 'خصومات VIP الحصرية';
+        
+        icon.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor" stroke="none">ع</text>
+            </svg>
+        `;
     }
+    
+    // حفظ التفضيلات وتحديث المحتوى
     localStorage.setItem('language', currentLanguage);
-    updateIcons(); updateLanguageContent();
+    updateLanguageContent();
     activeCategory = categoryTranslations[currentLanguage][0];
-    renderCategories(); filterCompanies();
-}
-
-function toggleColorThemes() {
-    const d = document.getElementById('color-themes-dropdown');
-    d.classList.toggle('show');
-    const close = (e) => { if (!e.target.closest('.color-theme-selector')) { d.classList.remove('show'); document.removeEventListener('click', close); } };
-    document.addEventListener('click', close);
-}
-
-function setColorTheme(theme) {
-    const b = document.body;
-    b.className = b.className.replace(/theme-\w+/g, '');
-    if (theme !== 'default') b.classList.add(`theme-${theme}`);
-    if (localStorage.getItem('theme') === 'light') b.classList.add('light-mode');
-    currentColorTheme = theme; localStorage.setItem('colorTheme', theme);
-    document.querySelectorAll('.color-theme-option').forEach(o => o.classList.remove('active'));
-    document.querySelector(`[data-theme="${theme}"]`)?.classList.add('active');
-    document.getElementById('color-themes-dropdown').classList.remove('show');
+    renderCategories();
+    filterCompanies();
 }
 
 function updateLanguageContent() {
     const t = translations[currentLanguage];
+    
     document.getElementById('hero-title').textContent = t.hero_title;
     document.getElementById('hero-subtitle').textContent = t.hero_subtitle;
+    document.getElementById('vip-badge-text').textContent = t.vip_badge_text;
     document.getElementById('search-input').placeholder = t.search_placeholder;
     document.getElementById('footer-text').textContent = t.footer_text;
     document.getElementById('no-results-title').textContent = t.no_results_title;
     document.getElementById('no-results-text').textContent = t.no_results_text;
-    const names = document.querySelectorAll('.theme-name');
-    ['default', 'sunset', 'forest', 'ocean', 'crimson', 'lavender', 'mint', 'amber', 'pink', 'teal'].forEach((th, i) => { if(names[i]) names[i].textContent = t[`theme_${th}`]; });
 }
 
 function loadPreferences() {
-    const theme = localStorage.getItem('theme'), lang = localStorage.getItem('language'), col = localStorage.getItem('colorTheme');
-    if (theme === 'light') document.body.classList.add('light-mode');
-    if (lang === 'en') {
+    const savedLanguage = localStorage.getItem('language');
+    const html = document.documentElement;
+    const body = document.body;
+    const langIcon = document.getElementById('language-icon');
+    const searchInput = document.getElementById('search-input');
+    const searchIcon = document.getElementById('search-icon');
+    
+    if (savedLanguage === 'en') {
         currentLanguage = 'en';
-        document.documentElement.setAttribute('lang', 'en'); document.documentElement.setAttribute('dir', 'ltr');
-        document.body.setAttribute('lang', 'en'); document.body.setAttribute('dir', 'ltr');
+        html.setAttribute('lang', 'en');
+        html.setAttribute('dir', 'ltr');
+        body.setAttribute('lang', 'en');
+        body.setAttribute('dir', 'ltr');
+        langIcon.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor" stroke="none">EN</text>
+            </svg>
+        `;
+        document.title = 'VIP Exclusive Discounts';
+        searchInput.style.paddingLeft = '60px';
+        searchInput.style.paddingRight = '28px';
+        searchIcon.style.left = '28px';
+        searchIcon.style.right = 'auto';
         updateLanguageContent();
+    } else {
+        langIcon.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold" fill="currentColor" stroke="none">ع</text>
+            </svg>
+        `;
+        searchInput.style.paddingRight = '60px';
+        searchInput.style.paddingLeft = '28px';
+        searchIcon.style.right = '28px';
+        searchIcon.style.left = 'auto';
     }
-    if (col && col !== 'default') setColorTheme(col);
-    updateIcons();
 }
 
-/* ========================
-   5. العرض والمنطق
-   ======================== */
 function showModal(company) {
     const t = translations[currentLanguage];
     const barcodeId = 'barcode-' + Date.now();
-    const name = currentLanguage === 'ar' ? company.name : company.nameEn;
-    const cat = currentLanguage === 'ar' ? company.category : company.categoryEn;
-    const date = currentLanguage === 'ar' ? company.validUntil : company.validUntilEn;
-    const desc = currentLanguage === 'ar' ? company.description : company.descriptionEn;
     
-    const html = `
+    const companyName = currentLanguage === 'ar' ? company.name : company.nameEn;
+    const companyCategory = currentLanguage === 'ar' ? company.category : company.categoryEn;
+    const validUntil = currentLanguage === 'ar' ? company.validUntil : company.validUntilEn;
+    const description = currentLanguage === 'ar' ? company.description : company.descriptionEn;
+    
+    const modalHtml = `
         <div class="modal-overlay" onclick="closeModal(event)">
             <div class="modal-content scrollbar-custom" onclick="event.stopPropagation()">
-                <div class="p-8 pb-0 text-center">
+                <div class="p-10 text-center border-b border-styled">
                     <div class="modal-logo">
-                        <img src="${company.logo}" alt="${name}" loading="lazy" onerror="this.style.display='none';">
+                        <img src="${company.logo}" alt="${companyName}" loading="lazy" onerror="this.style.display='none';">
                     </div>
-                    <h2 class="text-3xl font-bold text-styled mb-2">${name}</h2>
-                    <span class="inline-block px-4 py-2 bg-blue-500 bg-opacity-20 text-blue-500 rounded-full text-sm font-bold">${cat}</span>
+                    <h2 class="text-4xl font-bold text-styled mb-3">${companyName}</h2>
+                    <span class="inline-block px-5 py-2 bg-gradient-to-r from-yellow-600 to-yellow-500 text-black rounded-full text-sm font-bold">
+                        ${companyCategory}
+                    </span>
                 </div>
-                <div class="p-6 text-center">
-                    <div class="modal-discount mb-4">${company.discount}</div>
-                    <p class="text-secondary-styled text-sm">${t.discount_label}</p>
+
+                <div class="p-10 text-center bg-gradient-to-b from-transparent to-yellow-600 to-opacity-5">
+                    <p class="text-secondary-styled mb-4 text-sm font-bold">${t.discount_label}</p>
+                    <div class="modal-discount">
+                        ${company.discount}
+                    </div>
                 </div>
-                <div class="modal-divider"></div>
-                <div class="p-8 pt-0 text-center">
-                    <p class="text-secondary-styled mb-4 font-bold">${t.scan_barcode}</p>
-                    <div class="barcode-container"><div id="${barcodeId}" class="barcode-wrapper"></div></div>
-                    <div class="mt-6">
-                        <p class="text-secondary-styled text-sm mb-3">${t.or_use_code}</p>
-                        <div class="discount-code-box inline-flex items-center gap-3" onclick="copyToClipboard('${company.discountCode}')" title="${t.click_to_copy}">
-                            <span class="text-2xl">✂️</span><span class="text-styled font-bold text-2xl tracking-wider">${company.discountCode}</span>
+
+                <div class="p-10 text-center">
+                    <p class="text-secondary-styled mb-5 text-sm font-bold">${t.scan_barcode}</p>
+                    <div class="barcode-container mx-auto">
+                        <div id="${barcodeId}" class="barcode-wrapper"></div>
+                    </div>
+                </div>
+                
+                <div class="p-10 pt-0 text-center">
+                    <p class="text-secondary-styled text-xs mb-3 font-bold">${t.or_use_code}</p>
+                    <div class="discount-code-box inline-block" onclick="copyToClipboard('${company.discountCode}')" title="${t.click_to_copy}">
+                        <span class="text-styled font-bold text-xl">${company.discountCode}</span>
+                    </div>
+                </div>
+
+                <div class="p-10 space-y-5">
+                    <div class="detail-row">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-3xl">📅</span>
+                            <span class="text-secondary-styled text-sm font-bold">${t.valid_until}</span>
                         </div>
+                        <p class="text-styled font-bold text-lg ${currentLanguage === 'ar' ? 'mr-14' : 'ml-14'}">${validUntil}</p>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-3xl">💎</span>
+                            <span class="text-secondary-styled text-sm font-bold">${t.offer_details}</span>
+                        </div>
+                        <p class="text-styled leading-relaxed text-base ${currentLanguage === 'ar' ? 'mr-14' : 'ml-14'}">${description}</p>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-3xl">👑</span>
+                            <span class="text-secondary-styled text-sm font-bold">${t.how_to_use}</span>
+                        </div>
+                        <p class="text-styled leading-relaxed text-base ${currentLanguage === 'ar' ? 'mr-14' : 'ml-14'}">${t.how_to_use_text}</p>
                     </div>
                 </div>
-                <div class="modal-divider"></div>
-                <div class="p-8 pt-0 space-y-6 text-right" dir="${currentLanguage === 'ar' ? 'rtl' : 'ltr'}">
-                    <div class="detail-row"><div class="modal-label"><span>📅</span><span>${t.valid_until}</span></div><div class="modal-value">${date}</div></div>
-                    <div class="detail-row"><div class="modal-label"><span>📝</span><span>${t.offer_details}</span></div><div class="modal-value">${desc}</div></div>
-                    <div class="detail-row"><div class="modal-label"><span>💡</span><span>${t.how_to_use}</span></div><div class="modal-value text-sm">${t.how_to_use_text}</div></div>
-                </div>
-                <div class="p-8 pt-0 flex gap-4">
-                    <button onclick="closeModal()" class="close-btn flex-1 px-6 py-4 rounded-xl font-bold text-lg hover:shadow-lg transform active:scale-95 transition-all">${t.close}</button>
-                    <a href="${company.url}" target="_blank" class="visit-btn flex-1 px-6 py-4 rounded-xl font-bold text-lg text-white text-center hover:shadow-lg transform active:scale-95 transition-all">${t.visit_website}</a>
+
+                <div class="p-10 pt-0 flex gap-5">
+                    <button onclick="closeModal()" class="close-btn flex-1 px-8 py-5 rounded-2xl font-bold text-lg">
+                        ${t.close}
+                    </button>
+                    <a href="${company.url}" target="_blank" rel="noopener noreferrer" class="visit-btn flex-1 px-8 py-5 rounded-2xl font-bold text-lg text-center">
+                        ${t.visit_website}
+                    </a>
                 </div>
             </div>
         </div>
     `;
-    document.getElementById('modal-container').innerHTML = html;
-    setTimeout(() => { generateBarcode(company.discountCode, barcodeId); }, 100);
+    
+    document.getElementById('modal-container').innerHTML = modalHtml;
+    
+    setTimeout(() => {
+        generateBarcode(company.discountCode, barcodeId);
+    }, 100);
 }
 
 function closeModal(event) {
-    if (!event || event.target.classList.contains('modal-overlay') || event.target.classList.contains('close-btn')) {
+    if (!event || event.target.classList.contains('modal-overlay')) {
         document.getElementById('modal-container').innerHTML = '';
     }
 }
 
 function renderCategories() {
-    const c = document.getElementById('categories-container');
-    c.innerHTML = categoryTranslations[currentLanguage].map(cat => `
-        <button class="category-badge px-6 py-2 rounded-full text-sm font-bold transition-all ${cat === activeCategory ? 'active' : ''}" onclick="filterByCategory('${cat}')">${cat}</button>
+    const container = document.getElementById('categories-container');
+    const categories = categoryTranslations[currentLanguage];
+    
+    container.innerHTML = categories.map(cat => `
+        <button 
+            class="category-badge px-8 py-3 rounded-full text-sm font-bold transition-all ${cat === activeCategory ? 'active' : ''}"
+            onclick="filterByCategory('${cat}')"
+        >
+            ${cat}
+        </button>
     `).join('');
 }
 
-function renderCards(list) {
-    const g = document.getElementById('cards-grid'), nr = document.getElementById('no-results');
-    if (list.length === 0) { g.innerHTML = ''; nr.classList.remove('hidden'); return; }
-    nr.classList.add('hidden');
-    g.innerHTML = list.map((c, i) => {
-        const name = currentLanguage === 'ar' ? c.name : c.nameEn;
-        const cat = currentLanguage === 'ar' ? c.category : c.categoryEn;
+function renderCards(filteredCompanies) {
+    const grid = document.getElementById('cards-grid');
+    const noResults = document.getElementById('no-results');
+    
+    if (filteredCompanies.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+    }
+    
+    noResults.classList.add('hidden');
+    grid.innerHTML = filteredCompanies.map((company, index) => {
+        const companyName = currentLanguage === 'ar' ? company.name : company.nameEn;
+        const companyCategory = currentLanguage === 'ar' ? company.category : company.categoryEn;
+        
         return `
-            <div class="glass-card p-8 cursor-pointer card-enter" style="animation-delay: ${i * 0.1}s" onclick='showModal(${JSON.stringify(c).replace(/'/g, "&apos;")})'>
+            <div class="glass-card p-10 cursor-pointer card-enter" style="animation-delay: ${index * 0.1}s" onclick='showModal(${JSON.stringify(company).replace(/'/g, "&apos;")})'>
                 <div class="text-center">
                     <div class="logo-container">
-                        <img src="${c.logo}" alt="${name}" loading="lazy" onerror="this.style.display='none';">
+                        <img src="${company.logo}" alt="${companyName}" loading="lazy" onerror="this.style.display='none'; this.alt='Logo';">
                     </div>
-                    <div class="mb-4"><span class="discount-badge">${c.discount}</span></div>
-                    <h3 class="text-2xl font-bold text-styled mb-3">${name}</h3>
-                    <span class="inline-block px-4 py-2 bg-blue-500 bg-opacity-20 text-blue-500 rounded-full text-sm font-bold">${cat}</span>
+                    <div class="mb-5">
+                        <span class="discount-badge">
+                            ${company.discount}
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-styled mb-4">${companyName}</h3>
+                    <span class="inline-block px-5 py-2 bg-gradient-to-r from-yellow-600 to-yellow-500 text-black rounded-full text-sm font-bold">
+                        ${companyCategory}
+                    </span>
                 </div>
             </div>
         `;
@@ -326,66 +467,108 @@ function renderCards(list) {
 }
 
 function filterCompanies() {
-    let f = companies;
-    if (activeCategory !== categoryTranslations[currentLanguage][0]) {
-        f = f.filter(c => (currentLanguage === 'ar' ? c.category : c.categoryEn) === activeCategory);
-    }
-    if (searchQuery) {
-        f = f.filter(c => {
-            const n = currentLanguage === 'ar' ? c.name : c.nameEn;
+    const categories = categoryTranslations[currentLanguage];
+    let filtered = companies;
+    
+    if (activeCategory !== categories[0]) {
+        filtered = filtered.filter(c => {
             const cat = currentLanguage === 'ar' ? c.category : c.categoryEn;
-            return n.toLowerCase().includes(searchQuery.toLowerCase()) || cat.toLowerCase().includes(searchQuery.toLowerCase());
+            return cat === activeCategory;
         });
     }
-    renderCards(f);
+    
+    if (searchQuery) {
+        filtered = filtered.filter(c => {
+            const name = currentLanguage === 'ar' ? c.name : c.nameEn;
+            const cat = currentLanguage === 'ar' ? c.category : c.categoryEn;
+            return name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                   cat.toLowerCase().includes(searchQuery.toLowerCase());
+        });
+    }
+    
+    renderCards(filtered);
 }
 
-function filterByCategory(cat) { activeCategory = cat; renderCategories(); filterCompanies(); }
+function filterByCategory(category) {
+    activeCategory = category;
+    renderCategories();
+    filterCompanies();
+}
 
-function showSuggestions(q) {
-    const s = document.getElementById('suggestions');
-    if (!q) { s.classList.add('hidden'); return; }
-    const m = companies.filter(c => {
-        const n = currentLanguage === 'ar' ? c.name : c.nameEn;
+function showSuggestions(query) {
+    const suggestionsDiv = document.getElementById('suggestions');
+    
+    if (!query) {
+        suggestionsDiv.classList.add('hidden');
+        return;
+    }
+    
+    const matches = companies.filter(c => {
+        const name = currentLanguage === 'ar' ? c.name : c.nameEn;
         const cat = currentLanguage === 'ar' ? c.category : c.categoryEn;
-        return n.toLowerCase().includes(q.toLowerCase()) || cat.toLowerCase().includes(q.toLowerCase());
+        return name.toLowerCase().includes(query.toLowerCase()) ||
+               cat.toLowerCase().includes(query.toLowerCase());
     });
-    if (m.length === 0) { s.classList.add('hidden'); return; }
-    s.innerHTML = m.map(c => {
-        const n = currentLanguage === 'ar' ? c.name : c.nameEn;
-        const cat = currentLanguage === 'ar' ? c.category : c.categoryEn;
+    
+    if (matches.length === 0) {
+        suggestionsDiv.classList.add('hidden');
+        return;
+    }
+    
+    suggestionsDiv.innerHTML = matches.map(company => {
+        const name = currentLanguage === 'ar' ? company.name : company.nameEn;
+        const cat = currentLanguage === 'ar' ? company.category : company.categoryEn;
+        
         return `
-            <div class="suggestion-item p-4 cursor-pointer flex items-center gap-4" onclick="selectSuggestion('${n}')">
+            <div class="suggestion-item p-5 cursor-pointer flex items-center gap-5" onclick="selectSuggestion('${name}')">
                 <div class="suggestion-logo">
-                    <img src="${c.logo}" alt="${n}" loading="lazy" onerror="this.style.display='none';">
+                    <img src="${company.logo}" alt="${name}" loading="lazy" onerror="this.style.display='none';">
                 </div>
-                <div class="flex-1"><div class="text-styled font-bold">${n}</div><div class="text-sm text-secondary-styled">${cat}</div></div>
-                <div class="text-blue-400 font-bold">${c.discount}</div>
-            </div>`;
+                <div class="flex-1">
+                    <div class="text-styled font-bold text-base">${name}</div>
+                    <div class="text-sm text-secondary-styled">${cat}</div>
+                </div>
+                <div class="text-yellow-500 font-bold text-lg">${company.discount}</div>
+            </div>
+        `;
     }).join('');
-    s.classList.remove('hidden');
+    
+    suggestionsDiv.classList.remove('hidden');
 }
 
-function selectSuggestion(n) {
-    const i = document.getElementById('search-input');
-    i.value = n; searchQuery = n; filterCompanies();
+function selectSuggestion(name) {
+    const input = document.getElementById('search-input');
+    input.value = name;
+    searchQuery = name;
+    filterCompanies();
     document.getElementById('suggestions').classList.add('hidden');
 }
 
-/* ========================
-   6. تهيئة النظام
-   ======================== */
-document.getElementById('search-input').addEventListener('input', (e) => { searchQuery = e.target.value; showSuggestions(searchQuery); filterCompanies(); });
-document.addEventListener('click', (e) => { if (!e.target.closest('.search-container')) document.getElementById('suggestions').classList.add('hidden'); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); document.getElementById('color-themes-dropdown').classList.remove('show'); } });
+document.getElementById('search-input').addEventListener('input', (e) => {
+    searchQuery = e.target.value;
+    showSuggestions(searchQuery);
+    filterCompanies();
+});
 
-// SDK Handlers (if present)
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-container')) {
+        document.getElementById('suggestions').classList.add('hidden');
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
 async function onConfigChange(config) {
     if (currentLanguage === 'ar') {
-        if(config.hero_title) document.getElementById('hero-title').textContent = config.hero_title;
-        if(config.hero_subtitle) document.getElementById('hero-subtitle').textContent = config.hero_subtitle;
-        if(config.search_placeholder) document.getElementById('search-input').placeholder = config.search_placeholder;
-        if(config.footer_text) document.getElementById('footer-text').textContent = config.footer_text;
+        document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+        document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+        document.getElementById('vip-badge-text').textContent = config.vip_badge_text || defaultConfig.vip_badge_text;
+        document.getElementById('search-input').placeholder = config.search_placeholder || defaultConfig.search_placeholder;
+        document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
     }
 }
 
@@ -394,16 +577,22 @@ if (window.elementSdk) {
         defaultConfig,
         onConfigChange,
         mapToCapabilities: (config) => ({
-            recolorables: [], borderables: [], fontEditable: undefined, fontSizeable: undefined
+            recolorables: [],
+            borderables: [],
+            fontEditable: undefined,
+            fontSizeable: undefined
         }),
         mapToEditPanelValues: (config) => new Map([
             ["hero_title", config.hero_title || defaultConfig.hero_title],
             ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+            ["vip_badge_text", config.vip_badge_text || defaultConfig.vip_badge_text],
             ["search_placeholder", config.search_placeholder || defaultConfig.search_placeholder],
             ["footer_text", config.footer_text || defaultConfig.footer_text]
         ])
     });
 }
 
-// Start
-loadPreferences(); activeCategory = categoryTranslations[currentLanguage][0]; renderCategories(); renderCards(companies);
+loadPreferences();
+activeCategory = categoryTranslations[currentLanguage][0];
+renderCategories();
+renderCards(companies);
