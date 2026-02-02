@@ -68,7 +68,7 @@ const companies = [
         name: "بابا  جونز", 
         nameEn: "papa jons",
         logo: "./images/papa jons.svg", 
-        discount: "20%", 
+        discount: "25%", 
         category: "مطاعم راقية",
         categoryEn: "Fine Dining",
         url: "https://www.papajohnsegypt.com/?lang=ar", 
@@ -76,7 +76,7 @@ const companies = [
         validUntilEn: "December 31, 2026",
         description: "خصم على جميع انواع البيتزا والمشروبات والحلويات",
         descriptionEn: "Exclusive discount on All kinds of pizza, drinks, and desserts - Full VIP service",
-        discountCode: "PAPAJONS-VIP20" 
+        discountCode: "PAPAJONS-VIP25" 
     },
     { 
         name: "وافليشوس", 
@@ -147,6 +147,20 @@ const companies = [
         description: "خصم على جميع المأكولات والمشروبات",
         descriptionEn: "Exclusive discount on all Food and drinks.",
         discountCode: "SEDRA25" 
+    },
+       { 
+        name: "أنس الدمشقي", 
+        nameEn: "Anas Aldimashky",
+        logo: "./images/anas.svg", 
+        discount: "15%", 
+        category: "مطاعم راقية",
+        categoryEn: "Fine Dining",
+        url: "https://anasaldimashky.tryorder.net/menu", 
+        validUntil: "31 ديسمبر 2026",
+        validUntilEn: "December 31, 2026",
+        description: "خصم على جميع المأكولات والمشروبات",
+        descriptionEn: "Exclusive discount on all Food and drinks.",
+        discountCode: "ANAS15" 
     },
     
 ];
