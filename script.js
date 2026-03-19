@@ -162,7 +162,7 @@ const companies = [
         descriptionEn: "Exclusive discount on all Food and drinks.",
         discountCode: "ANAS15" 
     },
-       },
+     
        { 
         name: "كبدة الفلاح", 
         nameEn: "Kabda ElFalah",
