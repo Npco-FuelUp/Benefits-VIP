@@ -162,6 +162,21 @@ const companies = [
         descriptionEn: "Exclusive discount on all Food and drinks.",
         discountCode: "ANAS15" 
     },
+       },
+       { 
+        name: "كبدة الفلاح", 
+        nameEn: "Kabda ElFalah",
+        logo: "./images/kabdaElflah.svg", 
+        discount: "15%", 
+        category: "مطاعم راقية",
+        categoryEn: "Fine Dining",
+        url: "https://www.facebook.com/wahid.elfalah/", 
+        validUntil: "31 ديسمبر 2026",
+        validUntilEn: "December 31, 2026",
+        description: "خصم على جميع المأكولات والمشروبات",
+        descriptionEn: "Exclusive discount on all Food and drinks.",
+        discountCode: "KABDA-ELFALAH15" 
+    },
     
 ];
 
