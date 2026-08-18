@@ -177,6 +177,34 @@ const companies = [
         descriptionEn: "Exclusive discount on all Food and drinks.",
         discountCode: "KABDA-ELFALAH15" 
     },
+    { 
+        name: "صيدليات وياك", 
+        nameEn: "Wayak Pharmacies", 
+        logo: "images/Wayak.svg", 
+        discount: "18%", 
+        category: "صيدليات", 
+        categoryEn: "Pharmacies", 
+        url: "https://wayakcard.com/", 
+        validUntil: "31 ديسمبر 2026", 
+        validUntilEn: "December 31, 2026", 
+        description: "عروض حصرية عبر واتساب! اطلب الآن عبر الأرقام (01103452309 - 01111583361) واحصل على خصم 18% على الأدوية المحلية و7% على الأدوية المستوردة.", 
+        descriptionEn: "Exclusive WhatsApp Offer! Order via (01103452309 - 01111583361) and get 18% OFF on local medications and 7% OFF on imported medications.", 
+        discountCode: "WAYAK18" 
+    },
+    { 
+        name: "دكان", 
+        nameEn: "Dokkan", 
+        logo: "images/Dokkan.svg", 
+        discount: "20%", 
+        category: "مراكز صيانة", 
+        categoryEn: "Auto Service Centers", 
+        url: "https://dokkanauto.com/services/", 
+        validUntil: "31 ديسمبر 2026", 
+        validUntilEn: "December 31, 2026", 
+        description: "خصم 20% على مصنعية جميع خدمات المركز (بحد أقصى 1000 جنيه).", 
+        descriptionEn: "Enjoy 20% OFF on labor fees across all service center solutions (up to EGP 1,000).", 
+        discountCode: "DOKKAN20" 
+    },
     
 ];
 
@@ -185,8 +213,8 @@ let activeCategory = "الكل";
 let searchQuery = "";
 
 const categoryTranslations = {
-    ar: ["الكل",  "مطاعم راقية","ملابس"],
-    en: ["All", "Fine Dining",'clothes']
+    ar: ["الكل", "مطاعم راقية", "ملابس", "صيدليات", "مراكز صيانة"],
+    en: ["All", "Fine Dining", "Clothing", "Pharmacies", "Auto Service Centers"]
 };
 
 // Barcode generation
